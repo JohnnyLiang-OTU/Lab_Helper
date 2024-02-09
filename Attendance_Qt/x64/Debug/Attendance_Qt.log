@@ -1,2 +1,11 @@
-﻿  Database_Controller.cpp
+﻿  moc Attendance_Qt.h
+  Attendance.cpp
+  Date.cpp
+  Date_Controller.cpp
+  Student.cpp
+  Student_Controller.cpp
+  Attendance_Qt.cpp
+  Database_Controller.cpp
+  main.cpp
+  moc_Attendance_Qt.cpp
   Attendance_Qt.vcxproj -> D:\ProgrammingStuff\PersonalProjects\Attendance_Qt\x64\Debug\Attendance_Qt.exe

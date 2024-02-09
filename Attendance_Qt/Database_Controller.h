@@ -5,7 +5,10 @@ public:
 	Database_Controller();
 	~Database_Controller();
 	void setConnection();
-	void readTable();
+	void addToTable();
+	void deleteFromTable();
+
+
 private:
 };
 

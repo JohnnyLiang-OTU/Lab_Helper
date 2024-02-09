@@ -12,12 +12,14 @@ class Attendance_Qt : public QMainWindow
 public:
     Attendance_Qt(QWidget* parent = nullptr);
     ~Attendance_Qt();
-    void onPushButton2Clicked();
-    void onPushButtonClicked();
+
+private slots:
+    void onSubmitClicked();
 
 private:
     Ui::Attendance_QtClass ui;
     Database_Controller* controller;
+    bool isAdmin;
 };
 
 #endif // ATTENDANCE_QT_H

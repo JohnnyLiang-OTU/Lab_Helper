@@ -98,6 +98,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Attendance.cpp" />
+    <ClCompile Include="Date.cpp" />
+    <ClCompile Include="Date_Controller.cpp" />
+    <ClCompile Include="Student.cpp" />
+    <ClCompile Include="Student_Controller.cpp" />
     <QtRcc Include="Attendance_Qt.qrc" />
     <QtUic Include="Attendance_Qt.ui" />
     <QtMoc Include="Attendance_Qt.h" />
@@ -106,7 +111,12 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Attendance.h" />
     <ClInclude Include="Database_Controller.h" />
+    <ClInclude Include="Date.h" />
+    <ClInclude Include="Date_Controller.h" />
+    <ClInclude Include="Student.h" />
+    <ClInclude Include="Student_Controller.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

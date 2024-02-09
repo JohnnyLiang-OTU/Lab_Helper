@@ -12,6 +12,8 @@
 #include <QtCore/QVariant>
 #include <QtGui/QAction>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
@@ -19,6 +21,7 @@
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
+#include <qvalidator.h>
 
 QT_BEGIN_NAMESPACE
 
@@ -27,8 +30,12 @@ class Ui_Attendance_QtClass
 public:
     QAction *actionFlie;
     QWidget *centralWidget;
+    QPushButton *button_submit;
+    QLabel *label;
+    QLabel *label_2;
     QPushButton *pushButton;
-    QPushButton *pushButton_2;
+    QLineEdit *input_name;
+    QLineEdit *input_id;
     QMenuBar *menuBar;
     QMenu *menu;
     QToolBar *mainToolBar;
@@ -38,21 +45,35 @@ public:
     {
         if (Attendance_QtClass->objectName().isEmpty())
             Attendance_QtClass->setObjectName("Attendance_QtClass");
-        Attendance_QtClass->resize(644, 438);
+        Attendance_QtClass->resize(589, 450);
         actionFlie = new QAction(Attendance_QtClass);
         actionFlie->setObjectName("actionFlie");
         centralWidget = new QWidget(Attendance_QtClass);
         centralWidget->setObjectName("centralWidget");
+        button_submit = new QPushButton(centralWidget);
+        button_submit->setObjectName("button_submit");
+        button_submit->setGeometry(QRect(80, 150, 75, 24));
+        label = new QLabel(centralWidget);
+        label->setObjectName("label");
+        label->setGeometry(QRect(10, 80, 49, 16));
+        label_2 = new QLabel(centralWidget);
+        label_2->setObjectName("label_2");
+        label_2->setGeometry(QRect(20, 110, 49, 16));
         pushButton = new QPushButton(centralWidget);
         pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(210, 170, 91, 31));
-        pushButton_2 = new QPushButton(centralWidget);
-        pushButton_2->setObjectName("pushButton_2");
-        pushButton_2->setGeometry(QRect(210, 100, 75, 24));
+        pushButton->setGeometry(QRect(500, 370, 75, 24));
+        input_name = new QLineEdit(centralWidget);
+        input_name->setObjectName("input_name");
+        input_name->setGeometry(QRect(80, 80, 113, 21));
+        input_id = new QLineEdit(centralWidget);
+        input_id->setObjectName("input_id");
+        input_id->setGeometry(QRect(80, 110, 113, 21));
+        input_id->setMaxLength(9);
+        input_id->setValidator(new QIntValidator(100000000, 109999999, centralWidget));
         Attendance_QtClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(Attendance_QtClass);
         menuBar->setObjectName("menuBar");
-        menuBar->setGeometry(QRect(0, 0, 644, 22));
+        menuBar->setGeometry(QRect(0, 0, 589, 22));
         menu = new QMenu(menuBar);
         menu->setObjectName("menu");
         Attendance_QtClass->setMenuBar(menuBar);
@@ -74,8 +95,10 @@ public:
     {
         Attendance_QtClass->setWindowTitle(QCoreApplication::translate("Attendance_QtClass", "Attendance_Qt", nullptr));
         actionFlie->setText(QCoreApplication::translate("Attendance_QtClass", "Flie", nullptr));
-        pushButton->setText(QCoreApplication::translate("Attendance_QtClass", "Read Students", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("Attendance_QtClass", "PushButton", nullptr));
+        button_submit->setText(QCoreApplication::translate("Attendance_QtClass", "PushButton", nullptr));
+        label->setText(QCoreApplication::translate("Attendance_QtClass", "Name", nullptr));
+        label_2->setText(QCoreApplication::translate("Attendance_QtClass", "ID", nullptr));
+        pushButton->setText(QCoreApplication::translate("Attendance_QtClass", "AdminMode", nullptr));
         menu->setTitle(QCoreApplication::translate("Attendance_QtClass", "File", nullptr));
     } // retranslateUi
 
