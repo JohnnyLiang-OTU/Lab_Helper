@@ -66,11 +66,10 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\CodingApps\postreSQL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Qt\6.6.1\msvc2019_64\include\QtCore\qdebug.h;C:\Qt\6.6.1\msvc2019_64\include;C:\Program Files\PostgreSQL\16\include;D:\CodingApps\postreSQL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>D:\CodingApps\postreSQL\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>D:\CodingApps\postreSQL\lib\*.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>D:\CodingApps\postreSQL\lib\*.lib;C:\Program Files\PostgreSQL\16\lib\*.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
@@ -107,12 +106,10 @@
     <QtUic Include="Attendance_Qt.ui" />
     <QtMoc Include="Attendance_Qt.h" />
     <ClCompile Include="Attendance_Qt.cpp" />
-    <ClCompile Include="Database_Controller.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Attendance.h" />
-    <ClInclude Include="Database_Controller.h" />
     <ClInclude Include="Date.h" />
     <ClInclude Include="Date_Controller.h" />
     <ClInclude Include="Student.h" />

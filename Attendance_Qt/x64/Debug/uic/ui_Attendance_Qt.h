@@ -35,6 +35,7 @@ public:
     QPushButton *pushButton;
     QLineEdit *input_name;
     QLineEdit *input_id;
+    QPushButton *button_read;
     QMenuBar *menuBar;
     QMenu *menu;
     QToolBar *mainToolBar;
@@ -68,6 +69,9 @@ public:
         input_id->setObjectName("input_id");
         input_id->setGeometry(QRect(80, 110, 113, 21));
         input_id->setClearButtonEnabled(false);
+        button_read = new QPushButton(centralWidget);
+        button_read->setObjectName("button_read");
+        button_read->setGeometry(QRect(500, 340, 75, 24));
         Attendance_QtClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(Attendance_QtClass);
         menuBar->setObjectName("menuBar");
@@ -97,6 +101,7 @@ public:
         label->setText(QCoreApplication::translate("Attendance_QtClass", "Name", nullptr));
         label_2->setText(QCoreApplication::translate("Attendance_QtClass", "ID", nullptr));
         pushButton->setText(QCoreApplication::translate("Attendance_QtClass", "AdminMode", nullptr));
+        button_read->setText(QCoreApplication::translate("Attendance_QtClass", "Read Tables", nullptr));
         menu->setTitle(QCoreApplication::translate("Attendance_QtClass", "File", nullptr));
     } // retranslateUi
 

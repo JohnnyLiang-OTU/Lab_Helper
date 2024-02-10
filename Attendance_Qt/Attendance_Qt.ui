@@ -89,6 +89,19 @@
      <bool>false</bool>
     </property>
    </widget>
+   <widget class="QPushButton" name="button_read">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>340</y>
+      <width>75</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Read Tables</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">

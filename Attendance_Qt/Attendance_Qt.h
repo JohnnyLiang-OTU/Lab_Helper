@@ -3,7 +3,8 @@
 
 #include <QtWidgets/QMainWindow>
 #include "ui_Attendance_Qt.h"
-#include "Database_Controller.h"
+#include "Student_Controller.h"
+#include "Student.h"
 
 class Attendance_Qt : public QMainWindow
 {
@@ -12,9 +13,8 @@ class Attendance_Qt : public QMainWindow
 public:
     Attendance_Qt(QWidget* parent = nullptr);
     ~Attendance_Qt();
-
-private slots:
     void onSubmitClicked();
+    void onReadClicked();
 
 private:
     Ui::Attendance_QtClass ui;

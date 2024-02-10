@@ -1,7 +1,6 @@
 #pragma once
 #include <iostream>
-#include "Database_Controller.h"
-class Date_Controller: Database_Controller
+class Date_Controller
 {
 private:
 	std::string currentDate;
