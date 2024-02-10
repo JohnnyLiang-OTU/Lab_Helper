@@ -1,7 +1,4 @@
 #include "Database_Controller.h"
-#include <iostream>
-#include "libpq-fe.h"
-#include <qdebug.h>
 Database_Controller::Database_Controller(){};
 Database_Controller::~Database_Controller() {};
 

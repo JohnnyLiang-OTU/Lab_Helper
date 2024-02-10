@@ -9,6 +9,7 @@ private:
 
 public:
 	Student();
+	Student(std::string name, int id);
 	~Student();
 };
 

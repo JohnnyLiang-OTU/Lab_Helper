@@ -1,4 +1,7 @@
 #pragma once
+#include <iostream>
+#include "libpq-fe.h"
+#include <qdebug.h>
 class Database_Controller
 {
 public:

@@ -21,7 +21,6 @@
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
-#include <qvalidator.h>
 
 QT_BEGIN_NAMESPACE
 
@@ -68,8 +67,7 @@ public:
         input_id = new QLineEdit(centralWidget);
         input_id->setObjectName("input_id");
         input_id->setGeometry(QRect(80, 110, 113, 21));
-        input_id->setMaxLength(9);
-        input_id->setValidator(new QIntValidator(100000000, 109999999, centralWidget));
+        input_id->setClearButtonEnabled(false);
         Attendance_QtClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(Attendance_QtClass);
         menuBar->setObjectName("menuBar");

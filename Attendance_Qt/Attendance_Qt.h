@@ -18,7 +18,7 @@ private slots:
 
 private:
     Ui::Attendance_QtClass ui;
-    Database_Controller* controller;
+    Student_Controller* student_controller;
     bool isAdmin;
 };
 
