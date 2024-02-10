@@ -24,6 +24,11 @@
 *.so.*
 *.dll
 *.dylib
+*.recipe
+*.obj
+*.lastbuildstate
+*.pdb
+*.ilk
 
 # Qt-es
 object_script.*.Release
