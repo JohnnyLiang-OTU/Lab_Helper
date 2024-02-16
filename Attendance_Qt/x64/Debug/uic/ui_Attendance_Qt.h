@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtGui/QAction>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QCalendarWidget>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
@@ -36,6 +37,7 @@ public:
     QLineEdit *input_name;
     QLineEdit *input_id;
     QPushButton *button_read;
+    QCalendarWidget *calendarWidget;
     QMenuBar *menuBar;
     QMenu *menu;
     QToolBar *mainToolBar;
@@ -45,7 +47,7 @@ public:
     {
         if (Attendance_QtClass->objectName().isEmpty())
             Attendance_QtClass->setObjectName("Attendance_QtClass");
-        Attendance_QtClass->resize(589, 450);
+        Attendance_QtClass->resize(578, 450);
         actionFlie = new QAction(Attendance_QtClass);
         actionFlie->setObjectName("actionFlie");
         centralWidget = new QWidget(Attendance_QtClass);
@@ -72,10 +74,13 @@ public:
         button_read = new QPushButton(centralWidget);
         button_read->setObjectName("button_read");
         button_read->setGeometry(QRect(500, 340, 75, 24));
+        calendarWidget = new QCalendarWidget(centralWidget);
+        calendarWidget->setObjectName("calendarWidget");
+        calendarWidget->setGeometry(QRect(320, 0, 256, 190));
         Attendance_QtClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(Attendance_QtClass);
         menuBar->setObjectName("menuBar");
-        menuBar->setGeometry(QRect(0, 0, 589, 22));
+        menuBar->setGeometry(QRect(0, 0, 578, 22));
         menu = new QMenu(menuBar);
         menu->setObjectName("menu");
         Attendance_QtClass->setMenuBar(menuBar);

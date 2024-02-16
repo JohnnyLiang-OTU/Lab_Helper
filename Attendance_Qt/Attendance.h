@@ -1,8 +1,8 @@
 #pragma once
+#include <iostream>
 class Attendance
 {
 private:
-	int id;
 	int id_student;
 	int id_date;
 	bool isAttendee;

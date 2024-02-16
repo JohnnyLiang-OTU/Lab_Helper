@@ -55,6 +55,9 @@
     <ClCompile Include="Attendance.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Attendance_Controller.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Student_Controller.h">
@@ -70,6 +73,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Attendance.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Attendance_Controller.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -15,6 +15,7 @@ bool Student_Controller::connection_success(PGconn* conn)
 void Student_Controller::addStudent(std::string name, int id, std::string date)
 {
 	PGconn* conn = PQconnectdb("host=localhost dbname=Attendance_DB user=postgres password=1111");
+	//PGconn* conn = PQconnectdb("host=localhost dbname=postgres user=postgres password=1111"); // For dekstop
 	if (connection_success(conn) == false) { PQfinish(conn); }
 	PQfinish(conn);
 }
@@ -27,15 +28,16 @@ void Student_Controller::deleteStudent()
 
 }
 
-bool Student_Controller::isInTable(std::string name, int id)
+bool Student_Controller::isInTable(int id, std::string name)
 {
-	PGconn* conn = PQconnectdb("host=localhost dbname=postgres user=postgres password=1111"); // Must change dbname to match diff computers - Desktop.dbname = postgres
+	//PGconn* conn = PQconnectdb("host=localhost dbname=postgres user=postgres password=1111"); 
+	PGconn* conn = PQconnectdb("host=localhost dbname=Attendance_DB user=postgres password=1111");
 	if (connection_success(conn) == false)
 	{
 		return false;
 	}
-	//const std::string querys = "SELECT COUNT(*) FROM Student WHERE student_name LIKE '%" + name + "%' AND id = " + std::to_string(id);
-	const std::string querys = "SELECT COUNT(*) FROM Student"; 
+	const std::string querys = "SELECT COUNT(*) FROM Student WHERE student_name LIKE '%" + name + "%' AND id = " + std::to_string(id);
+	//const std::string querys = "SELECT COUNT(*) FROM Student"; 
 	PGresult* result = PQexec(conn, querys.c_str());
 
 	if (PQresultStatus(result) != PGRES_TUPLES_OK)
@@ -46,16 +48,16 @@ bool Student_Controller::isInTable(std::string name, int id)
 		return false;
 	}
 
-	//int rows = PQntuples(result);
-	//if (rows > 0) {
-	//	int count = std::stoi(PQgetvalue(result, 0, 0));
-	//	if (count > 0) {
-	//		qDebug() << "Value found in the table!";
-	//	}
-	//	else {
-	//		qDebug() << "Value not found in the table.";
-	//	}
-	//}
+	int rows = PQntuples(result);
+	if (rows > 0) {
+		int count = std::stoi(PQgetvalue(result, 0, 0));
+		if (count > 0) {
+			qDebug() << "Value found in the table!";
+		}
+		else {
+			qDebug() << "Value not found in the table.";
+		}
+	}
 	PQclear(result);
 	PQfinish(conn);
 
@@ -65,12 +67,13 @@ bool Student_Controller::isInTable(std::string name, int id)
 
 void Student_Controller::readTable()
 {
-	PGconn* conn = PQconnectdb("host=localhost dbname=postgres user=postgres password=1111");
+	//PGconn* conn = PQconnectdb("host=localhost dbname=postgres user=postgres password=1111"); // For Desktop
+	PGconn* conn = PQconnectdb("host=localhost dbname=Attendance_DB user=postgres password=1111");
 	if (connection_success(conn) == false)
 	{
 		qDebug() << "Connection Failed: " << PQerrorMessage(conn);
 	}
-	const std::string query = "SELECT * FROM Student";
+	const std::string query = "SELECT * FROM student";
 	PGresult* result = PQexec(conn, query.c_str());
 
 	if (PQresultStatus(result) != PGRES_TUPLES_OK)
